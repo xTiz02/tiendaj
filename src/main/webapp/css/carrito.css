@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+    text-decoration: none;
+      
+  
+}
+
+body{
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+/*barra*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+a{
+    text-decoration: none;
+}
+
+
+header{
+    width: 100%;
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    background: #fff;
+    margin-bottom: 40px;
+}
+
+/*HEADER SUPERIOR*/
+
+.header_sup{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 6px;
+}
+
+.logo img{
+    width: 100%;
+    height: 60px;   
+    object-fit: cover;
+}
+.search{
+    width: 300px;
+    display: flex;
+    padding: 0 10px;
+}
+.search input{
+    width: 100%;
+    padding: 10px;
+}
+
+.iconos_sup{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+}
+.iconos_sup div a{
+    color: #000;
+    font-size: 30px;
+}
+/*BARRA MENU*/
+
+.container_menu{
+    width: 100%;
+    height: 70px;
+    background:  #02d348;
+}
+
+.menu{
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.menu nav{
+    height: 100%;
+}
+
+.menu nav > ul{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu nav ul li{
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.menu nav > ul > li:first-child > a{
+    background-image: url(../img/homeImagen.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 40px;
+}
+
+.menu nav > ul > li:first-child:hover > a{
+    background-image: url(../img/homeImagen.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.menu nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+
+.menu nav > ul > li > a:hover{
+    transform: scale(1.1);
+    background: #0c6300;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+#selected{
+    transform: scale(1.1);/*logo home estatico*/
+    background-color:#094d00;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+
+/*SUBMENU*/
+
+.menu nav ul li ul{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 90px;
+    left: -5px;
+    padding: 14px 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    z-index: 10;
+    transition: all 300ms ease;
+}
+
+.menu nav ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+.menu nav ul li ul:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+.menu nav ul li ul li a{
+    display: block;
+    color: #000000;
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+.menu nav ul li ul li a:hover{
+    background:  #02d348;
+    color: #fff;
+    transform: scale(1.2);
+    padding-left: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+
+.icon_menu{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#label_check{
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check_menu{
+    display: none;
+}
+
+@media screen and (max-width: 720px){
+
+    .header_sup>div:nth-child(2){
+       padding: 0 10px;
+    }
+
+    .menu nav > ul{
+        flex-direction: column;
+        background-color: #00802b;
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        width: 100%;
+        /*transition: all 300ms ease;*/
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .menu nav > ul > li > a:hover{
+        transform: scale(1);
+    }
+
+    .menu nav ul li ul{
+        left: 90px;
+    }
+
+    .menu nav > ul > li:hover ul{
+        top: 50px;
+    }
+
+    #label_check{
+        display: block;
+    }
+
+    .icon_menu{
+        display: flex;
+    }
+
+    #check_menu:checked ~ nav > ul{
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    
+}
